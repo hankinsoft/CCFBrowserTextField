@@ -80,9 +80,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727E917B21F26AB7009F9986 /* CCFBrowserTextField.h in Headers */,
 				727E918E21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h in Headers */,
 				727E918821F26AE6009F9986 /* CCFBrowserTextFieldButton.h in Headers */,
-				727E917B21F26AB7009F9986 /* CCFBrowserTextField.h in Headers */,
 				727E918D21F26AE6009F9986 /* CCFBrowserTextFieldCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

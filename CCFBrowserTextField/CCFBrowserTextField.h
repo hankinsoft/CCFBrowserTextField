@@ -16,7 +16,7 @@ FOUNDATION_EXPORT const unsigned char CCFBrowserTextFieldVersionString[];
 
 #import "CCFBrowserTextFieldButton.h"
 #import "CCFBrowserTextFieldButtonImage.h"
-#import "CCFBrowserTextFieldButtonCell.h"
+#import "CCFBrowserTextFieldCell.h"
 
 // In this header, you should import all the public headers of your framework using statements like #import <CCFBrowserTextField/PublicHeader.h>
 
