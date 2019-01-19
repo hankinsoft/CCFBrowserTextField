@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		727E917B21F26AB7009F9986 /* CCFBrowserTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E917921F26AB7009F9986 /* CCFBrowserTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		727E918821F26AE6009F9986 /* CCFBrowserTextFieldButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918121F26AE6009F9986 /* CCFBrowserTextFieldButton.h */; };
+		727E918821F26AE6009F9986 /* CCFBrowserTextFieldButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918121F26AE6009F9986 /* CCFBrowserTextFieldButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727E918921F26AE6009F9986 /* CCFBrowserTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918221F26AE6009F9986 /* CCFBrowserTextField.m */; };
 		727E918A21F26AE6009F9986 /* CCFBrowserTextFieldButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918321F26AE6009F9986 /* CCFBrowserTextFieldButton.m */; };
 		727E918B21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918421F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m */; };
 		727E918C21F26AE6009F9986 /* CCFBrowserTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918521F26AE6009F9986 /* CCFBrowserTextFieldCell.m */; };
-		727E918D21F26AE6009F9986 /* CCFBrowserTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918621F26AE6009F9986 /* CCFBrowserTextFieldCell.h */; };
-		727E918E21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918721F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h */; };
+		727E918D21F26AE6009F9986 /* CCFBrowserTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918621F26AE6009F9986 /* CCFBrowserTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		727E918E21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918721F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -216,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -300,6 +300,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hankinsoft.CCFBrowserTextField;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -325,6 +326,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hankinsoft.CCFBrowserTextField;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
