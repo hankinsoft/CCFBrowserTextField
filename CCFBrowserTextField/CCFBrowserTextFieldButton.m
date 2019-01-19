@@ -21,25 +21,28 @@
 static NSImage *browserImage;
 static NSSize browserImageSize;
 
-@implementation CCFBrowserTextFieldButton {
+@implementation CCFBrowserTextFieldButton
+{
     CCFBrowserButtonBlock _actionBlock;
 }
 
-+ (void)initialize {
++ (void) initialize
+{
     browserImage = [[CCFBrowserTextFieldButtonImage alloc] init];
     browserImageSize = browserImage.size;
 }
 
-+ (NSSize)browserImageSize {
++ (NSSize) browserImageSize
+{
     return browserImageSize;
 }
 
-- (id)initWithFrame:(NSRect)frame
+- (id) initWithFrame: (NSRect) frame
 {
     self = [super initWithFrame:frame];
     if( !self ) return nil;
-    
-    [self setButtonType:NSMomentaryPushInButton];
+
+    [self setButtonType: NSButtonTypeMomentaryPushIn];
     [self setBordered:NO];
     [self setImage:browserImage];
     [self setImagePosition:NSImageOnly];

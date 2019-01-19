@@ -1,8 +1,8 @@
 /**
- @file CCFBrowserTextField.h
+ @file CCFBrowserTextFieldButtonImage.h
  @author Alan Duncan (www.cocoafactory.com)
  
- @date 2012-09-20 10:11:12
+ @date 2012-09-20 10:11:39
  @version 1.0
  
  Copyright (c) 2012 Cocoa Factory, LLC
@@ -15,30 +15,13 @@
  */
 
 
-/** NSTextField subclass that provides a small document button in the
- right side of the view.  It is intended in situations where you wish to fill
- in the text field by browsing to a location in the file system.
- 
- To use the class, you simply add it to your view when editing the nib.
- 
- @note Currently, this only support the regular size 22px high text field.
- 
- @note This class and those that compose it are inspired by OADatePickerTextField and its related
- classes published as open source components by the Omni Group.
+/** NSImage subclass that draws the tiny document icon into itself
+ *
+ *  Draws an 18x18 px images of a document icon
  */
 
-#import "CCFBrowserTextFieldButton.h"
+#import <Cocoa/Cocoa.h>
 
-@interface CCFBrowserTextField : NSTextField
-
-/** Set the action block from the browser button
- 
- If the class user wishes to receive mouse down events in the field's
- button, it should use this method to provide a block to be executed.
- 
- @param aBlock the block to be executed with the field's button is
- tapped.
- */
-- (void)setActionBlock:(CCFBrowserButtonBlock)aBlock;
+@interface CCFBrowserTextFieldButtonImage : NSImage
 
 @end

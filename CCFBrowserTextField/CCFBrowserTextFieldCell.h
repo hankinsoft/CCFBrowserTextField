@@ -20,6 +20,8 @@
  This NSTextFieldCell subclass provides some of the NSCell
  functionality for CCFBrowserTextField. */
 
+#import <Cocoa/Cocoa.h>
+
 @interface CCFBrowserTextFieldCell : NSTextFieldCell
 
 ///---------------------------------------------------------------------------------------

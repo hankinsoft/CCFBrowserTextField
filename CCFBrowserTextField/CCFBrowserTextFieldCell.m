@@ -28,7 +28,7 @@
     return bounds;
 }
 
-- (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent;
+- (void) editWithFrame: (NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent;
 {
     [super editWithFrame:[self titleRectForBounds:aRect] inView:controlView editor:textObj delegate:anObject event:theEvent];
 }
@@ -38,10 +38,11 @@
     [super selectWithFrame:[self titleRectForBounds:aRect] inView:controlView editor:textObj delegate:anObject start:selStart length:selLength];
 }
 
-+ (NSRect)rectForBrowserFrame:(NSRect)cellFrame {
++ (NSRect)rectForBrowserFrame:(NSRect)cellFrame
+{
     CGFloat verticalEdgeGap = (CGFloat)floor((NSHeight(cellFrame) - [CCFBrowserTextFieldButton browserImageSize].height)/2.0f);
     const CGFloat horizontalEdgeGap = 2.0f;
-    
+
     NSRect imageRect;
     imageRect.origin.x = NSMaxX(cellFrame) - [CCFBrowserTextFieldButton browserImageSize].width - horizontalEdgeGap;
     imageRect.origin.y = NSMinY(cellFrame) + verticalEdgeGap;
