@@ -30,7 +30,18 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     
     //// documentBody Drawing
     NSBezierPath *documentBodyPath = [NSBezierPath bezierPathWithRect: NSMakeRect(NSMinX(frame) + 3, NSMinY(frame) + NSHeight(frame) - 16.5, 11, 15)];
-    [[NSColor lightGrayColor] setFill];
+
+    NSColor * targetColor = NSColor.lightGrayColor;
+    if(@available(macOS 10.14, *))
+    {
+#warning todo -- handle light mode
+    }
+    else
+    {
+        targetColor = NSColor.darkGrayColor;
+    }
+
+    [targetColor setFill];
     [documentBodyPath fill];
     
     
