@@ -11,10 +11,8 @@
 		727E918821F26AE6009F9986 /* CCFBrowserTextFieldButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918121F26AE6009F9986 /* CCFBrowserTextFieldButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727E918921F26AE6009F9986 /* CCFBrowserTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918221F26AE6009F9986 /* CCFBrowserTextField.m */; };
 		727E918A21F26AE6009F9986 /* CCFBrowserTextFieldButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918321F26AE6009F9986 /* CCFBrowserTextFieldButton.m */; };
-		727E918B21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918421F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m */; };
 		727E918C21F26AE6009F9986 /* CCFBrowserTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E918521F26AE6009F9986 /* CCFBrowserTextFieldCell.m */; };
 		727E918D21F26AE6009F9986 /* CCFBrowserTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918621F26AE6009F9986 /* CCFBrowserTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		727E918E21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 727E918721F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +22,8 @@
 		727E918121F26AE6009F9986 /* CCFBrowserTextFieldButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFBrowserTextFieldButton.h; sourceTree = "<group>"; };
 		727E918221F26AE6009F9986 /* CCFBrowserTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFBrowserTextField.m; sourceTree = "<group>"; };
 		727E918321F26AE6009F9986 /* CCFBrowserTextFieldButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFBrowserTextFieldButton.m; sourceTree = "<group>"; };
-		727E918421F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFBrowserTextFieldButtonImage.m; sourceTree = "<group>"; };
 		727E918521F26AE6009F9986 /* CCFBrowserTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFBrowserTextFieldCell.m; sourceTree = "<group>"; };
 		727E918621F26AE6009F9986 /* CCFBrowserTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFBrowserTextFieldCell.h; sourceTree = "<group>"; };
-		727E918721F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFBrowserTextFieldButtonImage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +60,6 @@
 				727E918221F26AE6009F9986 /* CCFBrowserTextField.m */,
 				727E918121F26AE6009F9986 /* CCFBrowserTextFieldButton.h */,
 				727E918321F26AE6009F9986 /* CCFBrowserTextFieldButton.m */,
-				727E918721F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h */,
-				727E918421F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m */,
 				727E918621F26AE6009F9986 /* CCFBrowserTextFieldCell.h */,
 				727E918521F26AE6009F9986 /* CCFBrowserTextFieldCell.m */,
 				727E917A21F26AB7009F9986 /* Info.plist */,
@@ -81,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				727E917B21F26AB7009F9986 /* CCFBrowserTextField.h in Headers */,
-				727E918E21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.h in Headers */,
 				727E918821F26AE6009F9986 /* CCFBrowserTextFieldButton.h in Headers */,
 				727E918D21F26AE6009F9986 /* CCFBrowserTextFieldCell.h in Headers */,
 			);
@@ -154,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				727E918B21F26AE6009F9986 /* CCFBrowserTextFieldButtonImage.m in Sources */,
 				727E918C21F26AE6009F9986 /* CCFBrowserTextFieldCell.m in Sources */,
 				727E918921F26AE6009F9986 /* CCFBrowserTextField.m in Sources */,
 				727E918A21F26AE6009F9986 /* CCFBrowserTextFieldButton.m in Sources */,

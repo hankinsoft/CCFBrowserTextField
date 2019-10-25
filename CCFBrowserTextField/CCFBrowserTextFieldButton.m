@@ -16,7 +16,6 @@
 
 
 #import "CCFBrowserTextFieldButton.h"
-#import "CCFBrowserTextFieldButtonImage.h"
 
 static NSImage *browserImage;
 static NSSize browserImageSize;
@@ -28,7 +27,6 @@ static NSSize browserImageSize;
 
 + (void) initialize
 {
-    browserImage = [[CCFBrowserTextFieldButtonImage alloc] init];
     browserImageSize = browserImage.size;
 }
 
@@ -44,7 +42,6 @@ static NSSize browserImageSize;
 
     [self setButtonType: NSButtonTypeMomentaryPushIn];
     [self setBordered:NO];
-    [self setImage:browserImage];
     [self setImagePosition:NSImageOnly];
     [self setAutoresizingMask:NSViewMinXMargin | NSViewMinYMargin | NSViewMaxYMargin];
     
