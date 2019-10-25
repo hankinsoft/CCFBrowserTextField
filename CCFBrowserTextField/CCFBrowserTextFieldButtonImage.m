@@ -22,10 +22,12 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     [self lockFocus];
     //// Frames
     NSRect frame = NSMakeRect(0, 0, self.size.width, self.size.height);
-    
+
+    NSColor * backgroundColor = NSColor.greenColor;
+
     //// backgroundRect Drawing
     NSBezierPath  *backgroundRectPath = [NSBezierPath bezierPathWithRect: NSMakeRect(0, 0, 18, 18)];
-    [[NSColor whiteColor] setFill];
+    [backgroundColor setFill];
     [backgroundRectPath fill];
     
     //// documentBody Drawing
@@ -56,7 +58,7 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     [pageCornerPathPath moveToPoint: NSMakePoint(NSMinX(frame) + 9.5, NSMaxY(frame) - 1.5)];
     [pageCornerPathPath lineToPoint: NSMakePoint(NSMinX(frame) + 9.5, NSMaxY(frame) - 5.5)];
     [pageCornerPathPath lineToPoint: NSMakePoint(NSMinX(frame) + 13.5, NSMaxY(frame) - 5.5)];
-    [[NSColor whiteColor] setStroke];
+    [backgroundColor setStroke];
     [pageCornerPathPath setLineWidth: 1];
     [pageCornerPathPath stroke];
     
@@ -65,7 +67,7 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     NSBezierPath *topLinePathPath = [NSBezierPath bezierPath];
     [topLinePathPath moveToPoint: NSMakePoint(NSMinX(frame) + 4.5, NSMaxY(frame) - 9.5)];
     [topLinePathPath curveToPoint: NSMakePoint(NSMinX(frame) + 11.5, NSMaxY(frame) - 9.5) controlPoint1: NSMakePoint(NSMinX(frame) + 12.5, NSMaxY(frame) - 9.5) controlPoint2: NSMakePoint(NSMinX(frame) + 11.5, NSMaxY(frame) - 9.5)];
-    [[NSColor whiteColor] setStroke];
+    [backgroundColor setStroke];
     [topLinePathPath setLineWidth: 1];
     [topLinePathPath stroke];
     
@@ -74,7 +76,7 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     NSBezierPath *midLinePathPath = [NSBezierPath bezierPath];
     [midLinePathPath moveToPoint: NSMakePoint(NSMinX(frame) + 4.5, NSMaxY(frame) - 11.5)];
     [midLinePathPath curveToPoint: NSMakePoint(NSMinX(frame) + 11.5, NSMaxY(frame) - 11.5) controlPoint1: NSMakePoint(NSMinX(frame) + 12.5, NSMaxY(frame) - 11.5) controlPoint2: NSMakePoint(NSMinX(frame) + 11.5, NSMaxY(frame) - 11.5)];
-    [[NSColor whiteColor] setStroke];
+    [backgroundColor setStroke];
     [midLinePathPath setLineWidth: 1];
     [midLinePathPath stroke];
     
@@ -83,7 +85,7 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     NSBezierPath *bottomLinePathPath = [NSBezierPath bezierPath];
     [bottomLinePathPath moveToPoint: NSMakePoint(NSMinX(frame) + 4.5, NSMaxY(frame) - 13.5)];
     [bottomLinePathPath curveToPoint: NSMakePoint(NSMinX(frame) + 11.5, NSMaxY(frame) - 13.5) controlPoint1: NSMakePoint(NSMinX(frame) + 12.5, NSMaxY(frame) - 13.5) controlPoint2: NSMakePoint(NSMinX(frame) + 11.5, NSMaxY(frame) - 13.5)];
-    [[NSColor whiteColor] setStroke];
+    [backgroundColor setStroke];
     [bottomLinePathPath setLineWidth: 1];
     [bottomLinePathPath stroke];
     
