@@ -34,7 +34,11 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     NSColor * targetColor = NSColor.lightGrayColor;
     if(@available(macOS 10.14, *))
     {
-#warning todo -- handle light mode
+        NSString * mode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+        if(!(mode && NSOrderedSame == [@"Dark" caseInsensitiveCompare: mode]))
+        {
+            targetColor = NSColor.darkGrayColor;
+        }
     }
     else
     {
