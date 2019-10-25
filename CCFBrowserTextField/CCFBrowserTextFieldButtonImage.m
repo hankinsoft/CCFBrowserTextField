@@ -31,18 +31,20 @@ static void _drawIcon(CCFBrowserTextFieldButtonImage *self) {
     //// documentBody Drawing
     NSBezierPath *documentBodyPath = [NSBezierPath bezierPathWithRect: NSMakeRect(NSMinX(frame) + 3, NSMinY(frame) + NSHeight(frame) - 16.5, 11, 15)];
 
-    NSColor * targetColor = NSColor.lightGrayColor;
+    BOOL isLight = YES;
     if(@available(macOS 10.14, *))
     {
         NSString * mode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
-        if(!(mode && NSOrderedSame == [@"Dark" caseInsensitiveCompare: mode]))
+        if(mode && NSOrderedSame == [@"Dark" caseInsensitiveCompare: mode])
         {
-            targetColor = NSColor.darkGrayColor;
+            isLight = NO;
         }
     }
-    else
+
+    NSColor * targetColor = NSColor.blueColor;
+    if(isLight)
     {
-        targetColor = NSColor.darkGrayColor;
+        targetColor = NSColor.redColor;
     }
 
     [targetColor setFill];
