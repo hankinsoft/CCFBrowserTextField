@@ -182,6 +182,7 @@
     [self.getCell setImage: image];
 
     [self layoutSubtreeIfNeeded];
+    [self setNeedsDisplay];
 } // End of setButtonImage:
 
 - (void) clearTextField
