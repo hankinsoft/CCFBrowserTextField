@@ -125,6 +125,8 @@
     {
         _browserButton = [[CCFBrowserTextFieldButton alloc] initWithFrame: CGRectZero];
         _browserButton.translatesAutoresizingMaskIntoConstraints = false;
+
+        [self addSubview:_browserButton];
         [_browserButton.centerYAnchor constraintEqualToAnchor: self.centerYAnchor].active = YES;
         [_browserButton.rightAnchor constraintEqualToAnchor: self.rightAnchor
                                                    constant: 2.0f].active = YES;
@@ -135,7 +137,6 @@
         buttonWidthAnchor.active = true;
         buttonHeightAnchor.active = true;
 
-        [self addSubview:_browserButton];
         [_browserButton setImage: [NSImage imageNamed: @"Dropdown"]];
         self.autoresizesSubviews = YES;
 
@@ -149,16 +150,16 @@
         clearButton = [[CCFBrowserTextFieldButton alloc] initWithFrame: CGRectZero];
 
         clearButton.translatesAutoresizingMaskIntoConstraints = false;
-        [clearButton.centerYAnchor constraintEqualToAnchor: self.centerYAnchor].active = YES;
-        [clearButton.rightAnchor constraintEqualToAnchor: _browserButton.rightAnchor].active = YES;
-        [clearButton.topAnchor constraintEqualToAnchor: _browserButton.topAnchor].active = YES;
-        [clearButton.bottomAnchor constraintEqualToAnchor: _browserButton.bottomAnchor].active = YES;
 
         // Default clear button as hidden
         [clearButton setHidden: YES];
         [clearButton setImage: [NSImage imageNamed: @"ClearText"]];
 
         [self addSubview: clearButton];
+        [clearButton.centerYAnchor constraintEqualToAnchor: self.centerYAnchor].active = YES;
+        [clearButton.rightAnchor constraintEqualToAnchor: _browserButton.rightAnchor].active = YES;
+        [clearButton.topAnchor constraintEqualToAnchor: _browserButton.topAnchor].active = YES;
+        [clearButton.bottomAnchor constraintEqualToAnchor: _browserButton.bottomAnchor].active = YES;
         self.autoresizesSubviews = YES;
 
         [clearButton setActionHandler: ^{
