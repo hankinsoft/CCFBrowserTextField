@@ -118,10 +118,11 @@
     // Need to watch ourself for text changed
     self.delegate = self;
 
+    // Set our cell
+    [self setCell: [[CCFBrowserTextFieldCell alloc] init]];
+
     if ( !_browserButton )
     {
-        [self _setCellClass];
-
         _browserButton = [[CCFBrowserTextFieldButton alloc] initWithFrame: CGRectZero];
         _browserButton.translatesAutoresizingMaskIntoConstraints = false;
         [_browserButton.centerYAnchor constraintEqualToAnchor: self.centerYAnchor].active = YES;
@@ -183,21 +184,6 @@
     [self setStringValue: @""];
     [clearButton setHidden: YES];
 } // End of clearTextField
-
-- (void) _setCellClass
-{
-    Class customClass = [CCFBrowserTextFieldCell class];
-
-    //  since we are switching the isa pointer, we need to guarantee that the class layout in memory is the same
-    NSAssert(class_getInstanceSize(customClass) == class_getInstanceSize(class_getSuperclass(customClass)), @"Incompatible class assignment");
-
-    //  switch classes if we are not already switched
-    NSCell *cell = [self cell];
-    if( ![cell isKindOfClass:[CCFBrowserTextFieldCell class]] )
-    {
-        object_setClass(cell, customClass);
-    }
-}
 
 - (CCFBrowserTextFieldCell*) getCell
 {
