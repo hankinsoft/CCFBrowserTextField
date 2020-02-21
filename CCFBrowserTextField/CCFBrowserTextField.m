@@ -29,9 +29,13 @@
 {
     CCFBrowserTextFieldButton * _browserButton;
     CCFBrowserTextFieldButton * clearButton;
+    
+    NSLayoutConstraint          * buttonWidthAnchor;
+    NSLayoutConstraint          * buttonHeightAnchor;
 }
 
-+ (Class)cellClass {
++ (Class) cellClass
+{
     return [CCFBrowserTextFieldCell class];
 }
 
@@ -60,7 +64,8 @@
 
 #pragma mark - Public API
 
-- (void)setActionBlock:(CCFBrowserButtonBlock)aBlock {
+- (void) setActionBlock: (CCFBrowserButtonBlock)aBlock
+{
     [_browserButton setActionHandler:aBlock];
 }
 
@@ -115,33 +120,38 @@
 
     if ( !_browserButton )
     {
-        NSSize browserImageSize = [CCFBrowserTextFieldButton browserImageSize];
-        NSRect buttonFrame = NSMakeRect(0.0f, 0.0f, browserImageSize.width, browserImageSize.height);
-        _browserButton = [[CCFBrowserTextFieldButton alloc] initWithFrame:buttonFrame];
-        buttonFrame = [CCFBrowserTextFieldCell rectForBrowserFrame:self.bounds];
-        
         [self _setCellClass];
-        
-        
+
+        _browserButton = [[CCFBrowserTextFieldButton alloc] initWithFrame: CGRectZero];
+        _browserButton.translatesAutoresizingMaskIntoConstraints = false;
+        [_browserButton.centerYAnchor constraintEqualToAnchor: self.centerYAnchor].active = YES;
+        [_browserButton.rightAnchor constraintEqualToAnchor: self.rightAnchor
+                                                   constant: 2.0f].active = YES;
+
+        buttonWidthAnchor = [_browserButton.widthAnchor constraintEqualToConstant: 0.0f];
+        buttonHeightAnchor = [_browserButton.heightAnchor constraintEqualToConstant: 0.0f];
+
+        buttonWidthAnchor.active = true;
+        buttonHeightAnchor.active = true;
+
         [self addSubview:_browserButton];
         [_browserButton setImage: [NSImage imageNamed: @"Dropdown"]];
         self.autoresizesSubviews = YES;
 
-        [_browserButton setFrame: buttonFrame
-                   actionHandler: ^{
+        [_browserButton setActionHandler: ^{
             NSLog(@"pushed");
         }];
     }
 
     if ( !clearButton )
     {
-        NSSize browserImageSize = [CCFBrowserTextFieldButton browserImageSize];
-        NSRect buttonFrame = NSMakeRect(0.0f, 0.0f, browserImageSize.width, browserImageSize.height);
-        clearButton = [[CCFBrowserTextFieldButton alloc] initWithFrame: buttonFrame];
-        buttonFrame = [CCFBrowserTextFieldCell rectForBrowserFrame: self.bounds];
-        buttonFrame.origin.x -= buttonFrame.size.width;
+        clearButton = [[CCFBrowserTextFieldButton alloc] initWithFrame: CGRectZero];
 
-        [self _setCellClass];
+        clearButton.translatesAutoresizingMaskIntoConstraints = false;
+        [clearButton.centerYAnchor constraintEqualToAnchor: self.centerYAnchor].active = YES;
+        [clearButton.rightAnchor constraintEqualToAnchor: _browserButton.rightAnchor].active = YES;
+        [clearButton.topAnchor constraintEqualToAnchor: _browserButton.topAnchor].active = YES;
+        [clearButton.bottomAnchor constraintEqualToAnchor: _browserButton.bottomAnchor].active = YES;
 
         // Default clear button as hidden
         [clearButton setHidden: YES];
@@ -150,8 +160,7 @@
         [self addSubview: clearButton];
         self.autoresizesSubviews = YES;
 
-        [clearButton setFrame: buttonFrame
-                   actionHandler: ^{
+        [clearButton setActionHandler: ^{
                        [self clearTextField];
                    }];
     }
@@ -159,19 +168,29 @@
     return self;
 }
 
+- (void) setButtonImage: (NSImage*) image
+{
+    [_browserButton setImage: image];
+    [buttonWidthAnchor setConstant: image.size.width];
+    [buttonHeightAnchor setConstant: image.size.height];
+    [self.getCell setImage: image];
+
+    [self layoutSubtreeIfNeeded];
+} // End of setButtonImage:
+
 - (void) clearTextField
 {
     [self setStringValue: @""];
     [clearButton setHidden: YES];
 } // End of clearTextField
 
-- (void)_setCellClass
+- (void) _setCellClass
 {
     Class customClass = [CCFBrowserTextFieldCell class];
-    
+
     //  since we are switching the isa pointer, we need to guarantee that the class layout in memory is the same
     NSAssert(class_getInstanceSize(customClass) == class_getInstanceSize(class_getSuperclass(customClass)), @"Incompatible class assignment");
-    
+
     //  switch classes if we are not already switched
     NSCell *cell = [self cell];
     if( ![cell isKindOfClass:[CCFBrowserTextFieldCell class]] )
@@ -179,6 +198,11 @@
         object_setClass(cell, customClass);
     }
 }
+
+- (CCFBrowserTextFieldCell*) getCell
+{
+    return (CCFBrowserTextFieldCell*) self.cell;
+} // End of getCell
 
 #pragma mark - NSTextField delegate
 

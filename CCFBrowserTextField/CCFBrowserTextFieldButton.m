@@ -17,22 +17,9 @@
 
 #import "CCFBrowserTextFieldButton.h"
 
-static NSImage *browserImage;
-static NSSize browserImageSize;
-
 @implementation CCFBrowserTextFieldButton
 {
-    CCFBrowserButtonBlock _actionBlock;
-}
-
-+ (void) initialize
-{
-    browserImageSize = browserImage.size;
-}
-
-+ (NSSize) browserImageSize
-{
-    return browserImageSize;
+    CCFBrowserButtonBlock   _actionBlock;
 }
 
 - (id) initWithFrame: (NSRect) frame
@@ -48,31 +35,31 @@ static NSSize browserImageSize;
     return self;
 }
 
-- (void)setFrame:(NSRect)browserRect actionHandler:(CCFBrowserButtonBlock)aHandler {
+- (void) setActionHandler: (CCFBrowserButtonBlock)aHandler
+{
     self.target = self;
     self.action = @selector(handleAction);
-    self.frame = browserRect;
     _actionBlock = aHandler;
 }
 
-- (void)setActionHandler:(CCFBrowserButtonBlock)aHandler {
-    _actionBlock = aHandler;
-}
-
-- (BOOL)canBecomeKeyView {
+- (BOOL) canBecomeKeyView
+{
     return NO;
 }
 
-- (BOOL)shouldDelayWindowOrderingForEvent:(NSEvent *)theEvent {
+- (BOOL) shouldDelayWindowOrderingForEvent: (NSEvent *) theEvent
+{
     return YES;
 }
 
-- (void)mouseDown:(NSEvent *)theEvent {
+- (void) mouseDown: (NSEvent *) theEvent
+{
     [NSApp preventWindowOrdering];
-    [super mouseDown:theEvent];
+    [super mouseDown: theEvent];
 }
 
-- (void)handleAction {
+- (void) handleAction
+{
     _actionBlock();
 }
 

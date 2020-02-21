@@ -29,7 +29,8 @@ FOUNDATION_EXPORT const unsigned char CCFBrowserTextFieldVersionString[];
  @param aBlock the block to be executed with the field's button is
  tapped.
  */
-- (void)setActionBlock:(CCFBrowserButtonBlock)aBlock;
+- (void) setActionBlock: (CCFBrowserButtonBlock) aBlock;
+- (void) setButtonImage: (NSImage*) image;
 
 @property(nonatomic,assign) BOOL showClearButton;
 

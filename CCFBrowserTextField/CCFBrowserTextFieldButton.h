@@ -26,26 +26,15 @@ typedef void(^CCFBrowserButtonBlock)(void);
 @interface CCFBrowserTextFieldButton : NSButton
 
 ///---------------------------------------------------------------------------------------
-/// @name Class methods
-///---------------------------------------------------------------------------------------
-
-/** Returns the size of the image 
- */
-+ (NSSize)browserImageSize;
-
-///---------------------------------------------------------------------------------------
 /// @name Initialization and sizing
 ///---------------------------------------------------------------------------------------
 
 /** Sets the frame of the button and its action handler
  *
- *  @param browserRect The frame for the button
  *  @param aHandler A CCFBrowserButtonBlock that is executed on mouseDown in the 
  *  button.
  */
 
-- (void)setFrame:(NSRect)browserRect actionHandler:(CCFBrowserButtonBlock)aHandler;
-
-- (void)setActionHandler:(CCFBrowserButtonBlock)aHandler;
+- (void) setActionHandler: (CCFBrowserButtonBlock) aHandler;
 
 @end

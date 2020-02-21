@@ -18,36 +18,63 @@
 #import "CCFBrowserTextFieldButton.h"
 
 @implementation CCFBrowserTextFieldCell
-
-- (NSRect)titleRectForBounds:(NSRect)bounds;
 {
-    NSRect buttonRect = [[self class] rectForBrowserFrame:bounds];
+    NSSize imageSize;
+}
+
+- (NSRect) titleRectForBounds: (NSRect) bounds;
+{
+    NSRect buttonRect = [self rectForBrowserFrame: bounds];
     float horizontalEdgeGap = 0.0f;
-    
+
     bounds.size.width -= NSWidth(buttonRect) + horizontalEdgeGap;
     return bounds;
 }
 
-- (void) editWithFrame: (NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent;
+- (void) editWithFrame: (NSRect)aRect
+                inView: (NSView *)controlView
+                editor:(NSText *)textObj
+              delegate:(id)anObject
+                 event:(NSEvent *)theEvent;
 {
-    [super editWithFrame:[self titleRectForBounds:aRect] inView:controlView editor:textObj delegate:anObject event:theEvent];
+    [super editWithFrame: [self titleRectForBounds:aRect]
+                  inView: controlView
+                  editor: textObj
+                delegate: anObject
+                   event: theEvent];
 }
 
-- (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject start:(NSInteger)selStart length:(NSInteger)selLength;
+- (void) selectWithFrame: (NSRect)aRect
+                  inView: (NSView *) controlView
+                  editor: (NSText *)textObj
+                delegate: (id)anObject
+                   start: (NSInteger) selStart
+                  length: (NSInteger)selLength;
 {
-    [super selectWithFrame:[self titleRectForBounds:aRect] inView:controlView editor:textObj delegate:anObject start:selStart length:selLength];
+    [super selectWithFrame: [self titleRectForBounds:aRect]
+                    inView: controlView
+                    editor: textObj
+                  delegate: anObject
+                     start: selStart
+                    length: selLength];
 }
 
-+ (NSRect)rectForBrowserFrame:(NSRect)cellFrame
+- (void) setImage: (NSImage*) image
 {
-    CGFloat verticalEdgeGap = (CGFloat)floor((NSHeight(cellFrame) - [CCFBrowserTextFieldButton browserImageSize].height)/2.0f);
+    imageSize = image.size;
+} // End of setImage:
+
+- (NSRect) rectForBrowserFrame:(NSRect)cellFrame
+{
+    CGFloat verticalEdgeGap = (CGFloat)floor((NSHeight(cellFrame) - imageSize.height) / 2.0f);
+
     const CGFloat horizontalEdgeGap = 2.0f;
 
     NSRect imageRect;
-    imageRect.origin.x = NSMaxX(cellFrame) - [CCFBrowserTextFieldButton browserImageSize].width - horizontalEdgeGap;
+    imageRect.origin.x = NSMaxX(cellFrame) - imageSize.width - horizontalEdgeGap;
     imageRect.origin.y = NSMinY(cellFrame) + verticalEdgeGap;
-    imageRect.size = [CCFBrowserTextFieldButton browserImageSize];
-    
+    imageRect.size = imageSize;
+
     return imageRect;
 }
 

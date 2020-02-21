@@ -33,6 +33,7 @@
  @param cellFrame The NSRect of the cell's frame
  @return The frame of the icon component based on the provided frame.
  */
-+ (NSRect)rectForBrowserFrame:(NSRect)cellFrame;
+- (void) setImage: (NSImage*) image;
+- (NSRect) rectForBrowserFrame: (NSRect) cellFrame;
 
 @end
