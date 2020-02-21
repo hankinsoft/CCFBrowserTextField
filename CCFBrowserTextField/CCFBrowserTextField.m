@@ -27,11 +27,12 @@
 
 @implementation CCFBrowserTextField
 {
-    CCFBrowserTextFieldButton * _browserButton;
-    CCFBrowserTextFieldButton * clearButton;
-    
-    NSLayoutConstraint          * buttonWidthAnchor;
-    NSLayoutConstraint          * buttonHeightAnchor;
+    CCFBrowserTextFieldCell         * textFieldCell;
+    CCFBrowserTextFieldButton       * _browserButton;
+    CCFBrowserTextFieldButton       * clearButton;
+
+    NSLayoutConstraint              * buttonWidthAnchor;
+    NSLayoutConstraint              * buttonHeightAnchor;
 }
 
 + (Class) cellClass
@@ -118,8 +119,11 @@
     // Need to watch ourself for text changed
     self.delegate = self;
 
+    // Set our textFieldCell
+    textFieldCell = [[CCFBrowserTextFieldCell alloc] init];
+
     // Set our cell
-    [self setCell: [[CCFBrowserTextFieldCell alloc] init]];
+    [self setCell: textFieldCell];
 
     if ( !_browserButton )
     {

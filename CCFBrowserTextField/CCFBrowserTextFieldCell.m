@@ -37,7 +37,7 @@
               delegate:(id)anObject
                  event:(NSEvent *)theEvent;
 {
-    [super editWithFrame: [self titleRectForBounds:aRect]
+    [super editWithFrame: [self titleRectForBounds: aRect]
                   inView: controlView
                   editor: textObj
                 delegate: anObject
@@ -51,7 +51,7 @@
                    start: (NSInteger) selStart
                   length: (NSInteger)selLength;
 {
-    [super selectWithFrame: [self titleRectForBounds:aRect]
+    [super selectWithFrame: [self titleRectForBounds: aRect]
                     inView: controlView
                     editor: textObj
                   delegate: anObject
@@ -64,7 +64,7 @@
     imageSize = image.size;
 } // End of setImage:
 
-- (NSRect) rectForBrowserFrame:(NSRect)cellFrame
+- (NSRect) rectForBrowserFrame: (NSRect)cellFrame
 {
     CGFloat verticalEdgeGap = (CGFloat)floor((NSHeight(cellFrame) - imageSize.height) / 2.0f);
 

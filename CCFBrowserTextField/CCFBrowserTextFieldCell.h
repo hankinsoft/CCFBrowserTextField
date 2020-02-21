@@ -24,16 +24,6 @@
 
 @interface CCFBrowserTextFieldCell : NSTextFieldCell
 
-///---------------------------------------------------------------------------------------
-/// @name Class methods
-///---------------------------------------------------------------------------------------
-
-/** Returns the rectangle for the frame used by he browser icon
- 
- @param cellFrame The NSRect of the cell's frame
- @return The frame of the icon component based on the provided frame.
- */
 - (void) setImage: (NSImage*) image;
-- (NSRect) rectForBrowserFrame: (NSRect) cellFrame;
 
 @end
